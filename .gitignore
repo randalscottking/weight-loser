@@ -1,0 +1,6 @@
+.roo/
+.specify/
+__pycache__/
+*.py[cod]
+*.class
+.env
