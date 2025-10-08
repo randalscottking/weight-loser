@@ -1,0 +1,15 @@
+import Foundation
+
+struct User: Codable, Identifiable {
+    let id: String
+    let name: String
+    let email: String
+    let createdAt: Date
+    
+    init(id: String = UUID().uuidString, name: String, email: String) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.createdAt = Date()
+    }
+}
