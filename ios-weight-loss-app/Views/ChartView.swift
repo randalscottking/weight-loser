@@ -1,0 +1,42 @@
+import SwiftUI
+import Charts
+
+struct ChartView: View {
+    @ObservedObject var dataManager = DataManager.shared
+    
+    var body: some View {
+        NavigationView {
+            Chart {
+                ForEach(dataManager.weightEntries.sorted(by: { $0.timestamp < $1.timestamp })) { entry in
+                    LineMark(
+                        x: .value("Date", entry.timestamp),
+                        y: .value("Weight", entry.weight)
+                    )
+                    .foregroundStyle(.blue)
+                }
+            }
+            .chartXAxis {
+                AxisMarks(values: .stride(by: .day, count: 7)) { _ in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel(format: .dateTime.month().day())
+                }
+            }
+            .chartYAxis {
+                AxisMarks { _ in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel()
+                }
+            }
+            .navigationTitle("Weight Trends")
+            .padding()
+        }
+    }
+}
+
+struct ChartView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChartView()
+    }
+}
