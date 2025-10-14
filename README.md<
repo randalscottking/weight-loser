@@ -1,0 +1,71 @@
+# Weight Loss Tracker iOS App
+
+An iOS application for tracking weight loss progress with goals, charts, and milestone notifications.
+
+## Features
+- 4-digit PIN authentication
+- Weight entry tracking with timestamps
+- Data retention for 6 months
+- Chart visualization of weight trends
+- Milestone notifications
+
+## Project Structure
+
+```
+.
+├── README.md
+├── ios-weight-loss-app/
+│   ├── App/
+│   │   └── WeightLossApp.swift
+│   ├── Models/
+│   │   └── WeightEntry.swift
+│   ├── Services/
+│   │   ├── DataManager.swift
+│   │   └── PINManager.swift
+│   ├── Sources/
+│   │   ├── Models/
+│   │   │   ├── Goal.swift
+│   │   │   ├── Notification.swift
+│   │   │   ├── User.swift
+│   │   │   └── WeightEntry.swift
+│   │   └── Services/
+│   │       └── DataManager.swift
+│   ├── Views/
+│   │   ├── AuthenticationView.swift
+│   │   ├── ChartView.swift
+│   │   ├── MainContentView.swift
+│   │   ├── WeightEntryView.swift
+│   │   └── WeightHistoryView.swift
+│   └── Tests/
+│       └── WeightLossAppTests.swift
+└── ios-weight-loss-app/README.md
+```
+
+## Getting Started
+
+1. Open `ios-weight-loss-app/WeightLossApp.xcodeproj` in Xcode
+2. Configure signing and capabilities
+3. Build and run the application
+
+## Implementation Status
+
+This project implements the iOS weight loss tracking application as specified in the requirements. The application includes all core functionality:
+- PIN authentication system
+- Weight entry management
+- Data persistence using UserDefaults
+- Chart visualization
+- Goal tracking
+- Notification system
+
+## Building and Running
+
+To build and run the iOS app:
+1. Open the Xcode project
+2. Select a simulator or connected device
+3. Press the Run button or Cmd+R
+
+## Requirements
+
+- Xcode 15 or later
+- iOS 17 or later
+- Swift 5.9 or later
