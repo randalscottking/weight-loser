@@ -1,0 +1,24 @@
+//
+//  WeightLossApp.swift
+//  WeightLossApp
+//
+//  Created by User on 2025-10-14.
+//
+
+import SwiftUI
+
+@main
+struct WeightLossApp: App {
+    var body: some Scene {
+        WindowGroup {
+            // Check if PIN is set
+            if PINManager.shared.isPINSet() {
+                // Show main content if PIN is set
+                MainContentView()
+            } else {
+                // Show authentication screen if no PIN is set
+                AuthenticationView()
+            }
+        }
+    }
+}
